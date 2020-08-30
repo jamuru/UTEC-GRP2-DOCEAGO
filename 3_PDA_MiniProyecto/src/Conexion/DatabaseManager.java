@@ -8,7 +8,7 @@ public class DatabaseManager {
 	private static Connection databaseConnection;
 
 	private static String CONNECTION_STRING = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static String USUARIO = "DOCEAGOSTO";
+	private static String USUARIO = "C##DOCEAGOSTO";
 	private static String CLAVE = "DOCEAGOSTO";
 
 	static {

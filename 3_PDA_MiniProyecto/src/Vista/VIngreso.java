@@ -9,6 +9,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.time.Instant;
 //import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -184,6 +185,7 @@ public class VIngreso {
 		
 		
 		JDateChooser dcFecha = new JDateChooser();
+		dcFecha.setDateFormatString("yyyy/MM/dd");
 		dcFecha.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -210,17 +212,16 @@ public class VIngreso {
 					
 					
 					// PROBANDO CON FECHA NACIMIENTO CALENDAR
-					//String fecha = dcFecha.getDateFormatString();
-					//Date fecha = (Date) dcFecha.getDate();
+					Instant fechaSQL = dcFecha.getDate().toInstant();
 					
 					//unaP.setFecNac(fecha);
-					//unaP.setFecNac((Date) dcFecha.getDate());
+					unaP.setFecNac(fechaSQL);
 					//unaP.setFecNac((java.sql.Date) dcFecha.);
 					//unaP.setFecNac(fecha);
 					//unaP.setFecNac(Date.valueOf(fecha));
 					
 					
-					unaP.setFecNac(Date.valueOf(textFechNac.getText()));
+					//unaP.setFecNac(Date.valueOf(textFechNac.getText()));
 					unaP.setClave(textContraseña.getText());
 					unaP.setMail(textMail.getText());
 					

@@ -1,6 +1,8 @@
 package Modelo;
 
 import java.sql.*;
+import java.time.Instant;
+import java.time.LocalDate;
 
 public class Persona {
 
@@ -10,7 +12,7 @@ public class Persona {
 	private String apellido2;
 	private String nombre1;
 	private String nombre2;
-	private Date fecNac;
+	private Instant fecNac;
 	private String clave;
 	private Integer id_rol;
 	private String mail;
@@ -18,7 +20,7 @@ public class Persona {
 	
 
 	public Persona(int id_persona, String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Date fecNac, String clave, int id_rol, String mail) {
+			Instant fecNac, String clave, int id_rol, String mail) {
 		this.id_persona = id_persona;
 		this.documento = documento;
 		this.apellido1 = apellido1;
@@ -32,7 +34,7 @@ public class Persona {
 	}
 	
 	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Date fecNac, String clave, int id_rol, String mail) {
+			Instant fecNac, String clave, int id_rol, String mail) {
 		this.documento = documento;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -45,7 +47,7 @@ public class Persona {
 	}
 	
 
-	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2, Date fecNac,
+	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2, Instant fecNac,
 			Integer id_rol, String mail) {
 		this.documento = documento;
 		this.apellido1 = apellido1;
@@ -58,7 +60,7 @@ public class Persona {
 	}
 
 	public Persona(int id_persona, String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Date fecNac, Integer id_rol, String mail) {
+			Instant fecNac, Integer id_rol, String mail) {
 		super();
 		this.id_persona = id_persona;
 		this.documento = documento;
@@ -122,12 +124,12 @@ public class Persona {
 		this.nombre2 = nombre2;
 	}
 
-	public Date getFecNac() {
+	public Instant getFecNac() {
 		return fecNac;
 	}
 
-	public void setFecNac(Date fecNac) {
-		this.fecNac = fecNac;
+	public void setFecNac(Instant fechaSQL) {
+		this.fecNac = fechaSQL;
 	}
 
 	public String getClave() {

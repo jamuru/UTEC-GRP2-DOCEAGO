@@ -2,6 +2,7 @@ package Vista;
 
 import java.awt.Dimension;
 import java.sql.Date;
+import java.time.Instant;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -51,7 +52,7 @@ public class VResultado extends JFrame {
 			String documento = personas.get(i).getDocumento();
 			String apellido1 = personas.get(i).getApellido1();
 			String nombre1 = personas.get(i).getNombre1();
-			Date fechNac = (Date) personas.get(i).getFecNac();
+			Instant fechNac = (Instant) personas.get(i).getFecNac();
 			String mail = personas.get(i).getMail();
 
 			fila[0] = documento;

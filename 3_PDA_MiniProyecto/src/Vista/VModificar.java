@@ -16,6 +16,7 @@ import Modelo.Persona;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.Date;
+import java.time.Instant;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -200,7 +201,7 @@ public class VModificar {
 				
 				//int idPersona = Integer.parseInt(textIdPersona.getText());
 				
-				Date fecNac = Date.valueOf(textFecNac.getText());
+				Instant fecNac = Instant.parse(textFecNac.getText());
 				
 				
 				String clave = textContrase.getText();
