@@ -201,7 +201,7 @@ public class VModificar {
 				
 				//int idPersona = Integer.parseInt(textIdPersona.getText());
 				
-				Instant fecNac = Instant.parse(textFecNac.getText());
+				java.util.Date fecNac = dcFecha.getDate();
 				
 				
 				String clave = textContrase.getText();

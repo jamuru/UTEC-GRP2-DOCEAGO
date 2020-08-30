@@ -185,7 +185,7 @@ public class VIngreso {
 		
 		
 		JDateChooser dcFecha = new JDateChooser();
-		dcFecha.setDateFormatString("yyyy/MM/dd");
+		dcFecha.setDateFormatString("yyyy-MM-dd");
 		dcFecha.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -212,10 +212,10 @@ public class VIngreso {
 					
 					
 					// PROBANDO CON FECHA NACIMIENTO CALENDAR
-					Instant fechaSQL = dcFecha.getDate().toInstant();
+					
 					
 					//unaP.setFecNac(fecha);
-					unaP.setFecNac(fechaSQL);
+					unaP.setFecNac(dcFecha.getDate());
 					//unaP.setFecNac((java.sql.Date) dcFecha.);
 					//unaP.setFecNac(fecha);
 					//unaP.setFecNac(Date.valueOf(fecha));

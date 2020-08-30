@@ -12,7 +12,7 @@ public class Persona {
 	private String apellido2;
 	private String nombre1;
 	private String nombre2;
-	private Instant fecNac;
+	private java.util.Date fecNac;
 	private String clave;
 	private Integer id_rol;
 	private String mail;
@@ -20,7 +20,7 @@ public class Persona {
 	
 
 	public Persona(int id_persona, String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Instant fecNac, String clave, int id_rol, String mail) {
+			java.util.Date fecNac, String clave, int id_rol, String mail) {
 		this.id_persona = id_persona;
 		this.documento = documento;
 		this.apellido1 = apellido1;
@@ -34,7 +34,7 @@ public class Persona {
 	}
 	
 	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Instant fecNac, String clave, int id_rol, String mail) {
+			java.util.Date fecNac, String clave, int id_rol, String mail) {
 		this.documento = documento;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -47,7 +47,7 @@ public class Persona {
 	}
 	
 
-	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2, Instant fecNac,
+	public Persona(String documento, String apellido1, String apellido2, String nombre1, String nombre2, java.util.Date fecNac,
 			Integer id_rol, String mail) {
 		this.documento = documento;
 		this.apellido1 = apellido1;
@@ -60,7 +60,7 @@ public class Persona {
 	}
 
 	public Persona(int id_persona, String documento, String apellido1, String apellido2, String nombre1, String nombre2,
-			Instant fecNac, Integer id_rol, String mail) {
+			java.util.Date fecNac, Integer id_rol, String mail) {
 		super();
 		this.id_persona = id_persona;
 		this.documento = documento;
@@ -124,11 +124,11 @@ public class Persona {
 		this.nombre2 = nombre2;
 	}
 
-	public Instant getFecNac() {
+	public java.util.Date getFecNac() {
 		return fecNac;
 	}
 
-	public void setFecNac(Instant fechaSQL) {
+	public void setFecNac(java.util.Date fechaSQL) {
 		this.fecNac = fechaSQL;
 	}
 

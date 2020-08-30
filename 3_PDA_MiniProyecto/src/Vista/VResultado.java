@@ -52,7 +52,7 @@ public class VResultado extends JFrame {
 			String documento = personas.get(i).getDocumento();
 			String apellido1 = personas.get(i).getApellido1();
 			String nombre1 = personas.get(i).getNombre1();
-			Instant fechNac = (Instant) personas.get(i).getFecNac();
+			java.util.Date fechNac = personas.get(i).getFecNac();
 			String mail = personas.get(i).getMail();
 
 			fila[0] = documento;

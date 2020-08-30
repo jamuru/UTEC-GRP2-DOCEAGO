@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.sql.Date;
@@ -19,8 +20,8 @@ public class DAO_Persona {
 	
 	public static final String ALL_PERSONAS = "SELECT * FROM PERSONA";
 	public static final String CUENTA_PERSONAS = "SELECT COUNT (ID_PERSONA) AS CUENTA FROM PERSONA";
-	public static final String INSERT_PERSONA = "INSERT INTO PERSONA (DOCUMENTO,APELLIDO1,APELLIDO2,NOMBRE1,NOMBRE2,FECHA_NAC,CLAVE,ID_ROL,MAIL)"
-			+ " values (?,?,?,?,?,?,?,?,?)";
+	public static final String INSERT_PERSONA = "INSERT INTO PERSONA (ID_PERSONA, DOCUMENTO,APELLIDO1,APELLIDO2,NOMBRE1,NOMBRE2,FECHA_NAC,CLAVE,ID_ROL,MAIL)"
+			+ " values (SEQ_ID_PERSONA.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	private static final String DELETE_PERSONA = "DELETE FROM PERSONA WHERE ID_PERSONA=?";
 	private static final String BUSCAR_PERSONA = "SELECT * FROM PERSONA WHERE APELLIDO1=? AND NOMBRE1=?";
 	private static final String UPDATE_PERSONA = "UPDATE PERSONA SET DOCUMENTO=?, APELLIDO1=?, APELLIDO2=?, NOMBRE1=?, NOMBRE2=? WHERE ID_PERSONA=?";
@@ -51,6 +52,11 @@ public class DAO_Persona {
 	
 	public static boolean insertar_Persona(Persona persona){
 		
+		SimpleDateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd");
+		String fechaSQL =  fechaFormateada.format(persona.getFecNac());
+		
+		System.out.println(fechaSQL);
+		
 		if (persona != null) {
 			
 			try {
@@ -62,7 +68,7 @@ public class DAO_Persona {
 				statement.setString(3, persona.getApellido2());
 				statement.setString(4, persona.getNombre1());
 				statement.setString(5, persona.getNombre2());
-				statement.setDate(6, (java.sql.Date) persona.getFecNac());
+				statement.setDate(6, Date.valueOf(fechaSQL));
 				statement.setString(7, persona.getClave());
 				statement.setInt(8, persona.getId_rol());
 				statement.setString(9, persona.getMail());
