@@ -39,7 +39,6 @@ public class VIngreso {
 	JTextField ingreoSegundoApellido;
 	JTextField ingreoPrimerNombre;
 	JTextField ingreoSegundoNombre;
-	JTextField textFechNac;
 	JTextField textContraseña;
 	JTextField textMail;
 	private String textRol;
@@ -137,12 +136,6 @@ public class VIngreso {
 		lblFechNac.setBounds(371, 11, 126, 14);
 		ingreso.getContentPane().add(lblFechNac);
 		
-		textFechNac = new JTextField();
-		textFechNac.setText("fechaporlasdudas");
-		textFechNac.setColumns(10);
-		textFechNac.setBounds(158, 332, 131, 20);
-		ingreso.getContentPane().add(textFechNac);
-		
 		JLabel lblContrasenia = new JLabel("Contrase\u00F1a");
 		lblContrasenia.setBounds(371, 67, 126, 14);
 		ingreso.getContentPane().add(lblContrasenia);
@@ -209,19 +202,7 @@ public class VIngreso {
 					unaP.setApellido2(ingreoSegundoApellido.getText());
 					unaP.setNombre1(ingreoPrimerNombre.getText());
 					unaP.setNombre2(ingreoSegundoNombre.getText());
-					
-					
-					// PROBANDO CON FECHA NACIMIENTO CALENDAR
-					
-					
-					//unaP.setFecNac(fecha);
 					unaP.setFecNac(dcFecha.getDate());
-					//unaP.setFecNac((java.sql.Date) dcFecha.);
-					//unaP.setFecNac(fecha);
-					//unaP.setFecNac(Date.valueOf(fecha));
-					
-					
-					//unaP.setFecNac(Date.valueOf(textFechNac.getText()));
 					unaP.setClave(textContraseña.getText());
 					unaP.setMail(textMail.getText());
 					
@@ -272,7 +253,6 @@ public class VIngreso {
 		ingreoSegundoApellido.setText("");
 		ingreoPrimerNombre.setText("");
 		ingreoSegundoNombre.setText("");
-		textFechNac.setText("");
 		textContraseña.setText("");
 		textMail.setText("");
 		

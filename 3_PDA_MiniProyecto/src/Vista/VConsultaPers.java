@@ -100,7 +100,7 @@ public class VConsultaPers {
 						v.ingreoSegundoApellido.setText(unaPer.getApellido2());
 						ingresoPrimerNombre.setText(unaPer.getNombre1());
 						v.ingreoSegundoNombre.setText(unaPer.getNombre2());
-						v.textFechNac.setText(unaPer.getFecNac().toString());
+						//v.textFechNac.setText(unaPer.getFecNac().toString());
 						//v.textRol.setText(unaPer.getId_rol());
 						v.textMail.setText(unaPer.getMail());
 						
